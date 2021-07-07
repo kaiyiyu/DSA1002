@@ -5,28 +5,43 @@
 #
 
 
-def bubbleSort(array):
+def bubbleSort(A):
     
     pass_num = 0
-    is_sorted = True
+    is_sorted = False
     
     while not is_sorted:
-        for i in range(len(array) - 1 - pass_num) - 1:
-            if array[i] > array[i + 1]:
-                temp = array[i]
-                array[i] = array[i + 1]
-                array[i + 1] = temp
+        is_sorted = True
+        for i in range(len(A) - 1 - pass_num):
+            if A[i] > A[i + 1]:
+                temp = A[i]
+                A[i] = A[i + 1]
+                A[i + 1] = temp
                 is_sorted = False
-        pass_num = pass_num - 1
+            
+    pass_num += 1
 
-an_array = [1, 9, 19, 7, 3, 10, 13, 15, 8, 12] 
-bubbleSort(an_array)
-print(an_array)
+def insertionSort(A):
 
-#def insertionSort(A):
-#    ...
-#
-#def selectionSort(A):
-#    ...
+    for i in range(1, len(A)):
+        j = i 
+        
+        temp = A[j]
+        while j > 0 and A[j-1] > temp:
+            A[j] = A[j-1]
+            j -= 1
+            
+        A[j] = temp
 
-
+def selectionSort(A):
+    
+    for i in range(0, len(A) - 1):
+        min_index = i
+        
+        for j in range(i + 1, len(A) - 1):
+            if A[j] < A[min_index]:
+                min_index = j
+            
+        temp = A[min_index]
+        A[min_index] = A[i]
+        A[i] = temp
