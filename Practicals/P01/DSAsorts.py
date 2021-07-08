@@ -4,7 +4,6 @@
 # Python file to hold all sorting methods
 #
 
-
 def bubbleSort(A):
     
     pass_num = 0
@@ -35,10 +34,10 @@ def insertionSort(A):
 
 def selectionSort(A):
     
-    for i in range(0, len(A) - 1):
+    for i in range(len(A)):
         min_index = i
         
-        for j in range(i + 1, len(A) - 1):
+        for j in range(i + 1, len(A)):
             if A[j] < A[min_index]:
                 min_index = j
             
@@ -67,4 +66,4 @@ def quickSortRecurse(A, leftIdx, rightIdx):
 
 def doPartitioning(A, leftIdx, rightIdx, pivotIdx):
     ...
-    
+
