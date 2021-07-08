@@ -45,3 +45,26 @@ def selectionSort(A):
         temp = A[min_index]
         A[min_index] = A[i]
         A[i] = temp
+
+def mergeSort(A):
+    """ mergeSort - front-end for kick-starting the recursive algorithm
+    """
+    ...
+
+def mergeSortRecurse(A, leftIdx, rightIdx):
+    ...
+
+def merge(A, leftIdx, midIdx, rightIdx):
+    ...
+
+def quickSort(A):
+    """ quickSort - front-end for kick-starting the recursive algorithm
+    """
+    ...
+
+def quickSortRecurse(A, leftIdx, rightIdx):
+    ...
+
+def doPartitioning(A, leftIdx, rightIdx, pivotIdx):
+    ...
+    

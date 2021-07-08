@@ -27,12 +27,22 @@ def processLine(csvRow):
 
     try:
         id = (tokens[0])
-        name = tokens[1]
         
-        print(" ID:" + id + " Name:" + name)
+        writeFile('test3.txt', id)
 
     except TypeError:
         raise TypeError("CSV row had invalid format")
-
+    
+##### File Writing #####
+def writeFile(filename, sorted):
+    try:
+        fileStrm = open(filename, 'w')
+        fileStrm.write('\n'.join(sorted))
+        
+        fileStrm.close()
+        
+    except IOError as e:
+        print("Error in writing to file: " + str(e))
+        
 ##### try
 readFile('RandomNames7000.csv')
