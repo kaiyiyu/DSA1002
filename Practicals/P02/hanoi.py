@@ -1,9 +1,9 @@
-# Towers of Hanoi
 
+# Towers of Hanoi
 
 class Hanoi:
     
-    count = 1
+    count = 1       # used a global and could refactor more but it works! lol
     
     def __init__(self):
         pass
@@ -18,10 +18,10 @@ class Hanoi:
             self.moveTower(disks - 1, aux, dest, src)
 
     def moveDisk(self, src, dest):
-        space = '  ' * (self.count - 1)
-        print('[%s] %sMoved disk from %s to %s.' % (self.count, space, src, dest))
+        space = '  ' * (self.count - 1)     # (self.count - 1) just for better numbering and space for first level 
+        print('[%s] %sMoved top disk from %s to %s.' % (self.count, space, src, dest))
         
         self.count += 1
 
 first_test = Hanoi()
-first_test.moveTower(3,"A","B","C")
+first_test.moveTower(4,"A","B","C")

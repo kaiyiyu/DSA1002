@@ -1,3 +1,4 @@
+
 # Find the GCD of two numbers using the Euclidean Algorithm (assumes a and b are non-negative)
 
 def calc_gcd(a, b):
@@ -15,7 +16,7 @@ def _calc_gcd(a, b):
     else:
         return _calc_gcd(b, a % b)
 
-calc_gcd(69, 1024)
+calc_gcd(346, 1024)
 
 
 

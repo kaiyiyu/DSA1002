@@ -1,3 +1,4 @@
+
 # Convert decimal x (base 10) to base y
 
 def convert_decimal(x, y):
@@ -21,4 +22,4 @@ def _convert_decimal(x, y):
     else:
         return str(_convert_decimal(x//y, y)) + str(rem)
     
-convert_decimal(56789, 2)
+convert_decimal(678, 4)
