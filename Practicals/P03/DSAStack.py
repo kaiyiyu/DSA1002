@@ -2,10 +2,10 @@ import numpy
 
 class DSAStack:
     
-    DEFAULT_CAPACITY = 100
+    DEFAULT_CAPACITY = 10
     
     def __init__(self):
-        self._stack = numpy.zeros(self.DEFAULT_CAPACITY, dtype=object)
+        self._stack = numpy.empty(self.DEFAULT_CAPACITY, dtype=object)
         self.count = 0
     
     # gets the values/items in the array
@@ -25,7 +25,7 @@ class DSAStack:
             raise Exception('Stack is full.')   
         elif self.count == self.DEFAULT_CAPACITY:
             self.DEFAULT_CAPACITY *= 2
-            new_data = numpy.zeros(self.DEFAULT_CAPACITY, dtype=object)
+            new_data = numpy.empty(self.DEFAULT_CAPACITY, dtype=object)
             for i in range(self.count):
                 new_data[i] = self._stack[i]
             self._stack = new_data
@@ -41,6 +41,4 @@ class DSAStack:
     def top(self):  
         if self.is_empty():
             raise Exception('Stack is empty.')
-        
         return self._stack[self.count - 1]
-
