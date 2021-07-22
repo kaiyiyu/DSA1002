@@ -2,7 +2,7 @@ import numpy
 
 class DSAStack:
     
-    DEFAULT_CAPACITY = 10
+    DEFAULT_CAPACITY = 100
     
     def __init__(self):
         self._stack = numpy.empty(self.DEFAULT_CAPACITY, dtype=object)

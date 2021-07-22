@@ -3,7 +3,7 @@ import numpy
 # Implementation of parent class queue (change index)
 class DSAQueue:
     
-    DEFAULT_CAPACITY = 5
+    DEFAULT_CAPACITY = 100
     
     def __init__(self):
         self._queue = numpy.zeros(self.DEFAULT_CAPACITY, dtype=object)
