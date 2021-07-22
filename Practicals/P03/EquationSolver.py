@@ -33,6 +33,7 @@ class EquationSolver:
         while not op_stack.is_empty():
             postfix_queue.enqueue(op_stack.pop())
         
+        postfix_queue.display()
         return postfix_queue
     
     def _evaluate_postfix(self, postfix_queue):
@@ -69,9 +70,21 @@ class EquationSolver:
         
 if __name__ == "__main__":
     exp1 = EquationSolver()
-    answer1 = exp1.solve_equation('3 * 8 - 12 / 4')
+    answer1 = exp1.solve_equation('3 * 4')
     print(answer1)
     
     exp2 = EquationSolver()
-    answer2 = exp2.solve_equation("10.3 * ( 14 + 3.2 ) / ( 5 + 2 - 4 * 3 )")
+    answer2 = exp2.solve_equation("2 - 4 + 3")
     print(answer2)
+    
+    exp3 = EquationSolver()
+    answer3 = exp3.solve_equation("( 4 + 2 ) * 3")
+    print(answer3)
+    
+    exp4 = EquationSolver()
+    answer4 = exp4.solve_equation("( ( 2 - 3 ) / 4 * ( 1 + 9 ) ) * 2")
+    print(answer4)
+    
+    exp5 = EquationSolver()
+    answer5 = exp5.solve_equation("( 10.3 * ( 14 + 3.2 ) ) / ( 5 + 2 - 4 * 3 )")
+    print(answer5)

@@ -3,7 +3,7 @@ import numpy
 # Implementation of parent class queue (change index)
 class DSAQueue:
     
-    DEFAULT_CAPACITY = 100
+    DEFAULT_CAPACITY = 15
     
     def __init__(self):
         self._queue = numpy.zeros(self.DEFAULT_CAPACITY, dtype=object)
@@ -56,7 +56,8 @@ class DSAQueue:
     def display(self):
         print('\nThe current state of the queue is:')
         for i in self._queue:
-            print('[', i, ']', end = ' ')
+            print('||', i, end = ' ')
+        #  print( i, end = ' ')
         print('\nThe current top value is: ', self.peek())
         
 # Implementation of shuffling queue
