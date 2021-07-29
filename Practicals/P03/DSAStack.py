@@ -2,7 +2,7 @@ import numpy
 
 class DSAStack:
     
-    DEFAULT_CAPACITY = 100
+    DEFAULT_CAPACITY = 5
     
     def __init__(self):
         self._stack = numpy.empty(self.DEFAULT_CAPACITY, dtype=object)
@@ -42,3 +42,10 @@ class DSAStack:
         if self.is_empty():
             raise Exception('Stack is empty.')
         return self._stack[self.count - 1]
+    
+    def display(self):
+        print('\nThe current state of the queue is:')
+        for i in self._stack:
+            print(i, end = ' ')
+        #  print( i, end = ' ')
+        #print('\nThe current top value is: ', self.top())

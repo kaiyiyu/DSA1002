@@ -49,7 +49,7 @@ class EquationSolver:
 
         return float(operand_stack.pop())
        
-    def _precedence_of(self, the_operator):  # sourcery skip: merge-comparisons
+    def _precedence_of(self, the_operator):  
         if the_operator == '+' or the_operator == '-':
             precedence = 1
         elif the_operator == '*' or the_operator == '/':
@@ -67,24 +67,25 @@ class EquationSolver:
             return op1 - op2
         else:
             raise Exception("Invalid operation.")
-        
+     
+# Driver code     
 if __name__ == "__main__":
     exp1 = EquationSolver()
     answer1 = exp1.solve_equation('3 * 4')
-    print(answer1)
+    print('The answer is:', answer1)
     
     exp2 = EquationSolver()
     answer2 = exp2.solve_equation("2 - 4 + 3")
-    print(answer2)
+    print('The answer is:', answer2)
     
     exp3 = EquationSolver()
     answer3 = exp3.solve_equation("( 4 + 2 ) * 3")
-    print(answer3)
+    print('The answer is:', answer3)
     
     exp4 = EquationSolver()
     answer4 = exp4.solve_equation("( ( 2 - 3 ) / 4 * ( 1 + 9 ) ) * 2")
-    print(answer4)
+    print('The answer is:', answer4)
     
     exp5 = EquationSolver()
     answer5 = exp5.solve_equation("( 10.3 * ( 14 + 3.2 ) ) / ( 5 + 2 - 4 * 3 )")
-    print(answer5)
+    print('The answer is:', answer5)

@@ -6,7 +6,7 @@ class DSAQueue:
     DEFAULT_CAPACITY = 15
     
     def __init__(self):
-        self._queue = numpy.zeros(self.DEFAULT_CAPACITY, dtype=object)
+        self._queue = numpy.empty(self.DEFAULT_CAPACITY, dtype=object)
         self.size = 0
         self.front = 0
     
@@ -36,7 +36,7 @@ class DSAQueue:
               
     def _shift(self, capacity):
         old_array = self._queue
-        self._queue = numpy.zeros(capacity, dtype=object)
+        self._queue = numpy.empty(capacity, dtype=object)
         move_index = self.front
         
         for i in range(self.size):
@@ -56,7 +56,7 @@ class DSAQueue:
     def display(self):
         print('\nThe current state of the queue is:')
         for i in self._queue:
-            print('||', i, end = ' ')
+            print(i, end = ' ')
         #  print( i, end = ' ')
         print('\nThe current top value is: ', self.peek())
         
@@ -66,7 +66,7 @@ class ShufflingQueue(DSAQueue):
     DEFAULT_CAPACITY = 5
     
     def __init__(self):
-        self._queue = numpy.zeros(self.DEFAULT_CAPACITY, dtype=object)
+        self._queue = numpy.empty(self.DEFAULT_CAPACITY, dtype=object)
         self.front = 0
         self.rear = -1
 
@@ -101,7 +101,7 @@ class CircularQueue(DSAQueue):
     DEFAULT_CAPACITY = 5
 
     def __init__(self):
-        self._queue = numpy.zeros(self.DEFAULT_CAPACITY, dtype=object)
+        self._queue = numpy.empty(self.DEFAULT_CAPACITY, dtype=object)
         self.front = 0 
         self.rear = 0
         self.size = 0

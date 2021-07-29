@@ -1,6 +1,6 @@
 import DSAQueue
 
-q1 = DSAQueue.ShufflingQueue()
+q1 = DSAQueue.CircularQueue()
 
 q1.enqueue('Kai')
 q1.enqueue('1')
