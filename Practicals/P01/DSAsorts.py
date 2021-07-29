@@ -1,4 +1,3 @@
-#
 # Data Structures and Algorithms COMP1002
 #
 # Python file to hold all sorting methods

@@ -13,7 +13,6 @@
 #** Date:    August 2017
 #** Modified (python): Hayden Richards
 #** Date:    March 2018
-
 import numpy as np
 import sys
 import timeit

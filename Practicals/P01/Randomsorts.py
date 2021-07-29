@@ -1,7 +1,6 @@
 import csv
 import DSAsorts
 
-
 class FileSorter:
     
     listToSort = []
