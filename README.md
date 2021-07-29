@@ -1,2 +1,2 @@
-# COMP1002
+# DSA1002
 Data Structures and Algorithms - Curtin College 
