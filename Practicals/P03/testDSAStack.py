@@ -20,8 +20,5 @@ print('\nAfter two pops, the remaining items in the stack are:')
 for i in range(stack.count):
     print(stack.get_count(i))
     
-
 # test top() -- if top() works properly then is_empty works too
 print('\nThe current top item is:', stack.top())
-
-    
