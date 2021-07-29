@@ -1,4 +1,3 @@
-
 def calc_factorial(n):
     if type(n) != int:
         raise TypeError('This function only accepts integers as input.')
