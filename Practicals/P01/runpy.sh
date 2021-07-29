@@ -1,5 +1,4 @@
 #!/bin/sh
-
 #
 # Script for St152 pracs S2/2004. Produces gnuplot output.
 # Controlled by editing the sorts and max variables.
