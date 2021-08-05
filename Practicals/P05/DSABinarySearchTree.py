@@ -96,22 +96,23 @@ class DSABinarySearchTree:
             curr.set_right(self._delete(key, curr.get_right()))
         return update_node
     
-    def delete_node(self, key, node_del):
+    def delete_node(self, key, nd):
         update_node = None
-        if node_del is None and node_del.get_right() is None:
+        if nd is None and nd.get_right() is None:
             update_node = None
-        elif node_del.get_left() is not None and node_del.get_right() is None:
-            update_node = node_del.get_left()
-        elif node_del.get_left() is None and node_del.get_right() is not None:
-            update_node = node_del.get_right()
+        elif nd.get_left() is not None and nd.get_right() is None:
+            update_node = nd.get_left()
+        elif nd.get_left() is None and nd.get_right() is not None:
+            update_node = nd.get_right()
         else:
-            update_node = self.promote_successor(node_del.get_right())
-            if update_node != node_del.get_right():
-                update_node.set_right(node_del.get_right())
-            update_node.set_left(node_del.get_left())
+            update_node = self.promote_successor(nd.get_right())
+            if update_node != nd.get_right():
+                update_node.set_right(nd.get_right())
+            update_node.set_left(nd.get_left())
         return update_node
         
     def promote_successor(self, curr):
+        successor = curr
         if curr.get_left() is not None:
             successor = self.promote_successor(curr.get_left())
             if successor == curr.get_left():

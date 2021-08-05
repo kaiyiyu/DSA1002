@@ -13,6 +13,10 @@ bst.insert(10, "G: 10")
 bst.insert(66, "H: 66")
 bst.insert(95, "I: 95")
 bst.display()
+# Test delete()
+print("\nTest delete()...")
+bst.delete(50)
+bst.display()
 # Test find()
 print("\nTest find()...")
 print(bst.find(95))
@@ -43,7 +47,3 @@ for i in postorder:
 # Test balance()
 print("\nTest balance()...")
 print(bst.balance())
-
-
-
-
