@@ -55,7 +55,7 @@ class DSABinarySearchTree:
     def _find(self, key, cur):
         value = None
         if cur == None: 
-            raise ValueError("Key " + key + " not found")
+            raise ValueError("Key " + str(key) + " not found")
         elif key == cur.get_key(): 
             value = cur.get_value()
         elif key < cur.get_key():  
