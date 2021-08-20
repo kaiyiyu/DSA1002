@@ -31,9 +31,8 @@ class FileIO:
                 self.graph.add_edge(vertices[0], vertices[1])
         
 if __name__ == "__main__":
-    file = FileIO()
-    
     ##### FIRST FILE #####
+    file = FileIO()
     print("Testing file 1...")
     file.readFile("prac6_1.al")
     file.processLine()
@@ -48,13 +47,14 @@ if __name__ == "__main__":
     print("-----------------------------------------------------------")
     
     ##### SECOND FILE #####
+    file1 = FileIO()
     print("Testing file 2...")
-    file.readFile("prac6_2.al")
-    file.processLine()
-    file.graph.display_list()
+    file1.readFile("prac6_2.al")
+    file1.processLine()
+    file1.graph.display_list()
     
     ##### TRAVERSALS #####
     print("Depth First Search")
-    print(file.graph.DFS() + "\n")
+    print(file1.graph.DFS() + "\n")
     print("Breadth First Search")
-    print(file.graph.BFS())
+    print(file1.graph.BFS())
