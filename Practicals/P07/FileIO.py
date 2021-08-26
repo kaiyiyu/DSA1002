@@ -5,8 +5,6 @@ class FileIO:
     def __init__(self):
         self.lines = DSALinkedList.DSALinkedList()
         self.table = DSAHashTable.DSAHashTable(7000)
-        self.table2 = DSAHashTable.DSAHashTable(7000)
-        self.duplicates = 0
         
     def loadCSV(self, filename):
         try:
@@ -24,14 +22,7 @@ class FileIO:
             
         for object in self.lines:
             token = object.split(",")
-            
-            try:
-                self.table.put(token[0], token[1])
-            except IOError:
-                self.duplicates += 1
-        
-        if self.duplicates != 0:
-            print("Duplicate keys found in file.")
+            self.table.put(token[0], token[1])
                 
     def saveCSV(self, filename):
         try:
@@ -43,23 +34,34 @@ class FileIO:
             
         except IOError as e:
             print("Error in file processing: " + str(e))
-        
+    
+    def printDivider(self):
+        print("----------------------------------------------------")  
+
+# Driver code
 if __name__ == "__main__":
     f = FileIO()
+    
+    # Read data from CSV
+    print("Loading data from CSV file and calculating initial load factor...")
     f.loadCSV("RandomNames7000.csv")
-    print(f.table.get_load_factor())
+    print("Program output:", f.table.get_load_factor())
+    f.printDivider()
     
+    # Add element and check new LF
     f.table.put("90022616", "Kai")
-    print(f.table.get_load_factor())
+    print("Program output:", f.table.get_load_factor())
+    f.printDivider()
     
+    # Remove an element and check LF > should go back to initial LF
     f.table.remove("90022616")
-    print(f.table.get_load_factor())
-    f.saveCSV("save.csv")
+    print("Program output:", f.table.get_load_factor())
+    f.printDivider()
     
-    print(f.table.get("14495655"))
-    print(f.table.get("90022616"))
+    # Save to CSV
+    f.saveCSV("hash.csv")
     
-    
-    
-    
-    
+    # Look up existing and unexisting elements
+    print("Expected value for 14495655: Sofia Bonfiglio\nProgram output:", f.table.get("14495655"))
+    print("Expected an error for previously removed key 90022616.")
+    f.table.get("90022616")

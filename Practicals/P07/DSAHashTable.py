@@ -6,18 +6,18 @@ class _DSAHashEntry:
     def __init__(self, in_key="", in_value=None):   
         self._key = in_key
         self._value = in_value    
-        if in_value is not None:
+        if self._key != "" and self._value is not None:
             self._state = 1
         else:
             self._state = 0
 
-    def to_str(self):
+    def _str__(self):
         return ("Key: " + self._key + ", Value: " + self._value + ", State: " + self._state)
      
 class DSAHashTable:
     
-    LOWER_THRESHOLD = 0.4
-    UPPER_THRESHOLD = 0.7
+    LOWER_THRESHOLD = 0.40
+    UPPER_THRESHOLD = 0.70
     MAX_STEP = 5
     
     def __init__(self, tableSize):
@@ -97,7 +97,7 @@ class DSAHashTable:
         self.hashArray[hashIdx]._state = -1
         
         if self.get_load_factor() < self.LOWER_THRESHOLD:
-            self._resize(int(round(len(self.hashArray) / 2)))
+            self._resize(len(self.hashArray) / 2)
      
     def get_load_factor(self):
         return self.count / len(self.hashArray)   
@@ -111,6 +111,12 @@ class DSAHashTable:
                 lines[index] = (self.hashArray[i]._key + ", " + self.hashArray[i]._value)
                 index += 1
         return lines    
+    
+    def has_key(self, in_key):
+        exists = False
+        if self.hashArray[self._hash(in_key)]._state == 1:
+            exists = True
+        return exists
                 
     def _hash(self, in_key):
         a = 63689
@@ -120,12 +126,6 @@ class DSAHashTable:
             hashIdx = (hashIdx * a) + ord(in_key[i])
             a *= b
         return abs(hashIdx % len(self.hashArray))
-    
-    def has_key(self, in_key):
-        exists = False
-        if self.hashArray[self._hash(in_key)]._state == 1:
-            exists = True
-        return exists
     
     def _step_hash(self, index):
         return self.MAX_STEP - (index % self.MAX_STEP)
@@ -169,4 +169,4 @@ class DSAHashTable:
                         is_prime = False
                     else:
                         ii += 2          
-        return prime
+        return round(int(prime))
