@@ -1,0 +1,28 @@
+1. Since they are self-balancing, their heights are less than BST. This is more
+evident with 2-3-4 trees and B trees.
+
+-------------------------------------------------------------------------------
+
+2. The main operations for the four trees generally have the 
+same time complexity of (O(logN)), however, a degenerate BST has a worst case
+complexity of O(N) since it is simply a linked list.
+
+-------------------------------------------------------------------------------
+
+
+3. These advanced trees are harder to implement than a normal BST.Red black 
+trees are easier to understand between the three advanced trees because of 
+the "color coding" which is easier to follow. Once the 2-3-4 tree is understood,
+the b-tree is similar in a way but with a slightly more complex splitting 
+method. I think the B-tree would be the hardest to implement especially because
+of its bottom up approach in splitting. If rotation is considered in red black
+trees then I believe this would be much more difficult to implement.
+
+-------------------------------------------------------------------------------
+
+Describe how an in-order traversal would work on each type of tree.
+
+4. All trees' in-order traversal will still have the keys in ascending order 
+and have a time complexity of O(n).
+
+------------------------------------------------------------------------------
